@@ -7,7 +7,7 @@ export const List = styled.ul`
   grid-row-gap: 10px;
 `;
 
-export const P = styled.p`
+export const Empty = styled.p`
   font-weight: bold;
   @-webkit-keyframes pulsate {
     50% {

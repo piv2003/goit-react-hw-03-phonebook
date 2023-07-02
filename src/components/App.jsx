@@ -10,6 +10,7 @@ import {
 } from '../LocalStorage/LocalStorage.js';
 
 const LOCAL_STORAGE_KEY = 'contacts';
+
 export class App extends Component {
   state = {
     contacts: [],
