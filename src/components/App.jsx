@@ -4,6 +4,7 @@ import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
 import { AppBox } from 'components/App.styled';
+import { loadStorage, saveStorage } from 'Services/storage';
 
 export class App extends Component {
   state = {
@@ -53,18 +54,23 @@ export class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
-
     return (
       <AppBox>
         <h1>PhoneBook</h1>
         <Form onSubmit={this.handleSubmit} />
         <h2>Contacts</h2>
-        <Filter onChange={this.handleChange} value={filter} />
-        <ContactsList
-          contacts={contacts}
-          filter={filter}
-          onDeleteContact={this.onDeleteContact}
-        />
+        {contacts !== undefined && contacts.length > 0 ? (
+          <>
+            <Filter onChange={this.handleChange} value={filter} />
+            <ContactsList
+              contacts={contacts}
+              filter={filter}
+              onDeleteContact={this.onDeleteContact}
+            />
+          </>
+        ) : (
+          <p>Contacts list is empty</p>
+        )}
       </AppBox>
     );
   }
