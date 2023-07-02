@@ -4,18 +4,34 @@ import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
 import { AppBox } from 'components/App.styled';
-import { loadStorage, saveStorage } from 'Services/storage';
+import {
+  loadLocalStorage,
+  saveLocalStorage,
+} from '../LocalStorage/LocalStorage.js';
 
+const LOCAL_STORAGE_KEY = 'contacts';
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  componentMount = () => {
+    const contacts = loadLocalStorage(LOCAL_STORAGE_KEY);
+    if (contacts) {
+      this.setState({ contacts });
+      return;
+    }
+    this.setState({ contacts: [] });
+  };
+
+  componentUpdate(_, prevState) {
+    const nextContacts = this.state.contacts;
+    const prevContacts = prevState.contacts;
+    if (nextContacts !== prevContacts) {
+      saveLocalStorage(LOCAL_STORAGE_KEY, nextContacts);
+    }
+  }
 
   addContact = (name, number) => {
     this.setState(({ contacts }) => ({
