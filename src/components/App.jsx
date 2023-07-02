@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
-import { AppBox } from 'components/App.styled';
+import { AppBox, Empty } from 'components/App.styled';
 import {
   loadLocalStorage,
   saveLocalStorage,
@@ -86,7 +86,7 @@ export class App extends Component {
             />
           </>
         ) : (
-          <p>Contacts list is empty</p>
+          <Empty>Contacts list is empty</Empty>
         )}
       </AppBox>
     );
