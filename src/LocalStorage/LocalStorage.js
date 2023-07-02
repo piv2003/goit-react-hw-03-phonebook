@@ -14,3 +14,12 @@ export const deleteLocalStorage = key => {
     console.error('Remove state error: ', error.message);
   }
 };
+
+export const loadLocalStorage = key => {
+  try {
+    const serializedState = localStorage.getItem(key);
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+};
