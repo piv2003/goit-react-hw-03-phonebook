@@ -4,10 +4,7 @@ import Form from 'components/Form';
 import Filter from 'components/Filter';
 import ContactsList from 'components/ContactsList/ContactsList.js';
 import { AppBox, Empty } from 'components/App.styled';
-import {
-  loadLocalStorage,
-  saveLocalStorage,
-} from '../LocalStorage/LocalStorage.js';
+import { loadStorage, saveStorage } from '../LocalStorage/LocalStorage.js';
 
 const LOCAL_STORAGE_KEY = 'contacts';
 
@@ -17,8 +14,8 @@ export class App extends Component {
     filter: '',
   };
 
-  componentMount = () => {
-    const contacts = loadLocalStorage(LOCAL_STORAGE_KEY);
+  componentDidMount = () => {
+    const contacts = loadStorage(LOCAL_STORAGE_KEY);
     if (contacts) {
       this.setState({ contacts });
       return;
@@ -26,11 +23,11 @@ export class App extends Component {
     this.setState({ contacts: [] });
   };
 
-  componentUpdate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const nextContacts = this.state.contacts;
     const prevContacts = prevState.contacts;
     if (nextContacts !== prevContacts) {
-      saveLocalStorage(LOCAL_STORAGE_KEY, nextContacts);
+      saveStorage(LOCAL_STORAGE_KEY, nextContacts);
     }
   }
 
