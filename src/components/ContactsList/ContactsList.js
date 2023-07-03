@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ContactListItem from 'components/ContactListItem/ContactListItem';
-import { List, Empty } from './ContactsList.styled';
+import { List } from './ContactsList.styled';
 
 const ContactsList = ({ contacts, filter, onDeleteContact }) => {
   return (
