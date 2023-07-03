@@ -23,7 +23,6 @@ export const InputFilter = styled.input`
   font-family: 'Roboto', sans-serif;
   font-style: italic;
   font-size: 18px;
-  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 75px 75px,
     rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.37) 0px 12px 21px, rgba(0, 0, 0, 0.09) 0px -3px 2px;
