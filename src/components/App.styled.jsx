@@ -13,14 +13,14 @@ export const AppBox = styled.div`
   padding: 20px;
   background: repeating-linear-gradient(
       190deg,
-      rgba(255, 0, 0, 0.5) 40px,
+      rgba(247, 56, 56, 0.5) 40px,
       rgba(255, 153, 0, 0.5) 80px,
       rgba(255, 255, 0, 0.5) 120px,
       rgba(0, 255, 0, 0.5) 160px,
-      rgba(57, 171, 248, 0.5) 200px,
+      rgba(125, 198, 247, 0.5) 200px,
       rgba(173, 72, 245, 0.5) 240px,
       rgba(238, 130, 238, 0.5) 280px,
-      rgba(255, 0, 0, 0.5) 300px
+      rgba(250, 62, 62, 0.5) 300px
     ),
     repeating-linear-gradient(
       -190deg,
@@ -28,7 +28,7 @@ export const AppBox = styled.div`
       rgba(255, 153, 0, 0.5) 60px,
       rgba(255, 255, 0, 0.5) 90px,
       rgba(0, 255, 0, 0.5) 120px,
-      rgba(57, 171, 248, 0.5) 150px,
+      rgba(104, 186, 241, 0.5) 150px,
       rgba(216, 179, 243, 0.5) 180px,
       rgba(238, 130, 238, 0.5) 210px,
       rgba(255, 0, 0, 0.5) 230px
@@ -72,7 +72,7 @@ export const Empty = styled.p`
   }
   color: rgb(245, 245, 245);
   text-shadow: 0 -1px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(#00ff37, #7e0b6e);
+  background: radial-gradient(#c801f0, #fdfa4c);
   border-radius: 7px;
   -webkit-animation: pulsate 2.2s linear infinite;
   animation: pulsate 2.2s linear infinite;
