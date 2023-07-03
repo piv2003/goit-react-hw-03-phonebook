@@ -7,14 +7,6 @@ export const saveStorage = (key, value) => {
   }
 };
 
-export const deleteStorage = key => {
-  try {
-    localStorage.removeItem(key);
-  } catch (error) {
-    console.error('Remove state error: ', error.message);
-  }
-};
-
 export const loadStorage = key => {
   try {
     const serializedState = localStorage.getItem(key);

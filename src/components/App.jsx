@@ -50,7 +50,7 @@ export class App extends Component {
   };
 
   notifiesAlert = nameContact => {
-    alert(`${nameContact} is already in contacts.`);
+    alert(`"${nameContact}" is already in contacts.`);
   };
 
   handleSubmit = ({ name: newName, number }) => {
