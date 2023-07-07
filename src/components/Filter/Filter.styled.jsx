@@ -21,7 +21,7 @@ export const InputFilter = styled.input`
   border-width: 0;
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-size: 18px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 75px 75px,
     rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,

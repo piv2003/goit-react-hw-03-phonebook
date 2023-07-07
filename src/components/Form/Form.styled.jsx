@@ -28,7 +28,7 @@ export const InputName = styled.input`
   border-width: 0;
   border-radius: 20px;
   font-family: 'Roboto', sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-size: 18px;
 `;
 
